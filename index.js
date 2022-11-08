@@ -20,7 +20,15 @@ async function run() {
   try {
     const servicesCollection = client.db("allServices").collection("services");
 
-    //  Get all of services data
+    // Created an API endpoint for get limited amount of data
+    app.get("/", async (req, res) => {
+      const query = {};
+      const cursor = servicesCollection.find(query);
+      const result = await cursor.limit(3).toArray();
+      res.send(result);
+    });
+
+    // Created an API endpoint for getting all of services data
     app.get("/services", async (req, res) => {
       const query = {};
       const cursor = servicesCollection.find(query);
@@ -31,10 +39,6 @@ async function run() {
   }
 }
 run().catch(console.dir);
-
-app.get("/", (req, res) => {
-  res.send("Server is running");
-});
 
 app.listen(port, () => {
   console.log(`Services reviews server running on ${port}`);
