@@ -1,0 +1,27 @@
+[
+  {
+    "service_name": "TAXES",
+    "img": "Will come soon",
+    "service_charge": 2800,
+    "des": "Successful companies take tax implications into consideration before making business decisions in order not to pay more taxes than prescribed by law.The available options for saving money can be left unattended, especially if a company is operating on new markets or under new jurisdictions."
+  },
+  {
+    "service_name": "LEGAL SERVICES",
+    "img": "Will come soon",
+    "service_charge": 800,
+    "des": "Offers professional legal consulting / advisory, and competent and timely assistance on a wide range of issues. Our experienced lawyers will help you to deal with both routine business and strategic development."
+  },
+  {
+    "service_name": "ACCOUNTING",
+    "img": "Will come soon",
+    "service_charge": 600,
+    "des": "We offer to our customers accounting services for all forms of businesses possible in Estonia and in other jurisdictions. If you are an organization with a growing team and finances, this bookkeeping service will prove indispensable. Any corporate organization must maintain accurate books and accounts. Additionally, it is necessary for companies that are subject to an internal or statutory audit."
+  },
+
+  {
+    "service_name": "CORPORATE SERVICES",
+    "img": "Will come soon",
+    "service_charge": 2200,
+    "des": "Our experts will suggest the most suitable operating model for a specific field of activity or project that would ensure the highest efficiency and safety of the partnership. There are many kinds of corporate service providers, and they differ based on their specialties and services. A corporate service provider’s aim is providing business support services to other companies, whether in tax accounting, company incorporation, or legal liabilities, which is done through the use of technology, experience, and well thought-out practices that serve to help the client."
+  }
+]
