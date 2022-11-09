@@ -19,6 +19,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     const servicesCollection = client.db("allServices").collection("services");
+    const reviewsCollection = client.db("allServices").collection("reviews");
 
     // Created an API endpoint for get limited amount of data
     app.get("/", async (req, res) => {
@@ -39,12 +40,36 @@ async function run() {
     // Get single products by services id
     app.get("/services/:id", async (req, res) => {
       const id = req.params.id;
-      console.log(id);
       const query = { _id: ObjectId(id) };
-      console.log(query);
       const result = await servicesCollection.findOne(query);
       res.send(result);
-      console.log(result);
+    });
+
+    // Create an api endpoint for add SERVICES
+    // app.post("/services", async (req, res) => {
+    //   const service = req.body;
+    //   const result = await servicesCollection.insertOne(service);
+    //   res.send(result);
+    // });
+
+    // Create an API endpoint for services reviews
+    app.post("/reviews", async (req, res) => {
+      const review = req.body;
+      const result = await reviewsCollection.insertOne(review);
+      res.send(result);
+    });
+
+    // Getting review for specific services
+    app.get("/reviews", async (req, res) => {
+      let query = {};
+      if (req.query.id) {
+        query = {
+          service_id: req.query.id,
+        };
+      }
+      const cursor = reviewsCollection.find(query);
+      const review = await cursor.toArray();
+      res.send(review);
     });
   } finally {
   }
