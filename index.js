@@ -84,6 +84,13 @@ async function run() {
       const review = await cursor.toArray();
       res.send(review);
     });
+
+    app.delete("/my-review/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const result = await reviewsCollection.deleteOne(query);
+      res.send(result);
+    });
   } finally {
   }
 }
