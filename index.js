@@ -46,11 +46,11 @@ async function run() {
     });
 
     // Create an api endpoint for add SERVICES
-    // app.post("/services", async (req, res) => {
-    //   const service = req.body;
-    //   const result = await servicesCollection.insertOne(service);
-    //   res.send(result);
-    // });
+    app.post("/add-services", async (req, res) => {
+      const service = req.body;
+      const result = await servicesCollection.insertOne(service);
+      res.send(result);
+    });
 
     // Create an API endpoint for services reviews
     app.post("/reviews", async (req, res) => {
