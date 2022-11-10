@@ -54,7 +54,7 @@ async function run() {
     // Created an API endpoint for get limited amount of data
     app.get("/", async (req, res) => {
       const query = {};
-      const cursor = servicesCollection.find(query);
+      const cursor = servicesCollection.find(query).sort({ dateAndTime: -1 });
       const result = await cursor.limit(3).toArray();
       res.send(result);
     });
