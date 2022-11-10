@@ -102,7 +102,7 @@ async function run() {
       res.send(review);
     });
 
-    // Gettin all for specific user
+    // Getting all reviews for specific user
     app.get("/my-review", verifyJWT, async (req, res) => {
       const decoded = req.decoded;
       if (decoded.email !== req.query.email) {
@@ -125,6 +125,8 @@ async function run() {
       const result = await reviewsCollection.deleteOne(query);
       res.send(result);
     });
+
+    // Get single user review
   } finally {
   }
 }
